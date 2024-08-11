@@ -7,23 +7,33 @@ int getPairsCount(const vector<int> &arr, int k)
 {
     unordered_map<int, int> m;
     int ans = 0;
+
     for (int i = 0; i < arr.size(); i++)
     {
         int b = k - arr[i];
-        if (m[b])
+
+        // Check if b (the complement) has been seen before
+        if (m[b] > 0)
         {
+            // Print each occurrence of the complement with the current element
+            for (int j = 0; j < m[b]; j++)
+            {
+                cout << arr[i] << "," << b << endl;
+            }
             ans += m[b];
-            cout << arr[i] << ", " << b << endl;
         }
+
+        // Add or update the count of the current element in the map
         m[arr[i]]++;
     }
+
     return ans;
 }
 
 int main()
 {
-    vector<int> arr = {1, 5, 7, 1};
-    int k = 6;
+    vector<int> arr = {1, 1, 1, 1};
+    int k = 2;
     int count = getPairsCount(arr, k);
     cout << "Number of pairs: " << count << endl;
     return 0;
