@@ -1,5 +1,3 @@
-public:
-// Function to find all elements in array that appear more than n/k times.
 int countOccurence(int arr[], int n, int k)
 {
     // Your code here
@@ -13,7 +11,7 @@ int countOccurence(int arr[], int n, int k)
         if (m[arr[i]] > x)
         {
             count++;
-            m[arr[i]] = -1000;
+            m[arr[i]] = -10000;
         }
     }
     return count;
