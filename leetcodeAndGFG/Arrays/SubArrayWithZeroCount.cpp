@@ -1,18 +1,13 @@
-int countOccurence(int arr[], int n, int k)
+bool subArrayExists(int arr[], int n)
 {
-    // Your code here
-
-    unordered_map<int, int> m;
-    int x = n / k;
-    int count = 0;
+    unordered_map<int, bool> hash;
+    int sum = 0;
     for (int i = 0; i < n; i++)
     {
-        m[arr[i]] += 1;
-        if (m[arr[i]] > x)
-        {
-            count++;
-            m[arr[i]] = -10000;
-        }
+        sum += arr[i];
+        if (hash[sum] || sum == 0)
+            return true;
+        hash[sum] = 1;
     }
-    return count;
+    return false;
 }
