@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include <vector>
 using namespace std;
+#include <algorithm>
 
 int getPairsCount(const vector<int> &arr, int k)
 {
