@@ -24,24 +24,23 @@ public:
     }
 };
 
-void insertEelement(Node *&tail, int element, int data)
+void insertElement(Node *&tail, int element, int data)
 {
-
     if (tail == NULL)
     {
-
         Node *temp = new Node(data);
         tail = temp;
         temp->next = temp;
     }
     else
     {
-
         Node *cur = tail;
 
         while (cur->data != element)
         {
             cur = cur->next;
+            if (cur == tail)
+                return; // Prevent infinite loop if element not found
         }
 
         Node *newNode = new Node(data);
@@ -52,11 +51,11 @@ void insertEelement(Node *&tail, int element, int data)
 
 void deleteNode(Node *&tail, int element)
 {
-
     if (tail == NULL)
     {
         return;
     }
+
     Node *prev = tail;
     Node *cur = prev->next;
 
@@ -64,26 +63,48 @@ void deleteNode(Node *&tail, int element)
     {
         prev = cur;
         cur = cur->next;
+        if (cur == tail)
+            return; // Prevent infinite loop if element not found
     }
 
     prev->next = cur->next;
+
+    if (cur == tail)
+    {
+        if (cur->next == cur)
+        {
+            tail = NULL;
+        }
+        else
+        {
+            tail = prev;
+        }
+    }
+
     cur->next = NULL;
-    delete (cur);
+    delete cur;
 }
 
 void printNode(Node *tail)
 {
+    if (tail == NULL)
+    {
+        return;
+    }
 
     Node *temp = tail;
+
     do
     {
-        cout << tail->data << " ";
-        tail = tail->next;
-    } while (tail->next != temp);
+        cout << temp->data << " ";
+        temp = temp->next;
+    } while (temp != tail);
+    cout << endl;
 }
 
 int main()
 {
     Node *tail = new Node(10);
-    insertEelement(tail, 10, 30);
+    insertElement(tail, 10, 30);
+    printNode(tail);
 }
