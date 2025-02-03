@@ -1,0 +1,29 @@
+// ------------------------------------- Remove Duplicate
+
+// function removeDuplicate(arr) {
+//   let uniqueElement = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     // Fixed "length" and loop condition
+//     if (uniqueElement.indexOf(arr[i]) === -1) {
+//       // Fixed "==" to "==="
+//       uniqueElement.push(arr[i]);
+//     }
+//   }
+//   return uniqueElement;
+// }
+
+// ----------------------------------------------
+// function findDuplicates(arr) {
+//   var visited = new Set();
+//   var duplicate = new Set();
+
+//   for (let num of arr) {
+//     if (visited.has(num)) {
+//       duplicate.add(num);
+//     } else {
+//       visited.add(num);
+//     }
+//   }
+//   return Array.from(visited);
+// }
+// console.log(findDuplicates([1, 1, 1, 2, 3, 4, 5, 5, 5, 6]));

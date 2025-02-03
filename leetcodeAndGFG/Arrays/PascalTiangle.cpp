@@ -1,29 +1,28 @@
-#include <vector>
-
-using namespace std;
-
 class Solution
 {
+private:
+    vector<int> generateRows(int rows)
+    {
+        long long ans = 1; // Use long long to handle large numbers
+        vector<int> ansRow;
+        ansRow.push_back(1); // First element is always 1
+        for (int col = 1; col < rows; col++)
+        {                             // Generate the row
+            ans = ans * (rows - col); // Compute the binomial coefficient
+            ans = ans / col;
+            ansRow.push_back(ans); // Add the value to the row
+        }
+        return ansRow;
+    }
+
 public:
     vector<vector<int>> generate(int numRows)
     {
-        vector<vector<int>> triangle;
-
-        for (int i = 0; i < numRows; ++i)
-        {
-            // Start with a row of 1s
-            vector<int> row(i + 1, 1);
-
-            // Update the elements of the row (except the first and last)
-            for (int j = 1; j < i; ++j)
-            {
-                row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
-            }
-
-            // Add the row to the triangle
-            triangle.push_back(row);
+        vector<vector<int>> ans;
+        for (int i = 1; i <= numRows; i++)
+        { // Generate rows from 1 to numRows
+            ans.push_back(generateRows(i));
         }
-
-        return triangle;
+        return ans;
     }
 };

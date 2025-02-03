@@ -1,0 +1,17 @@
+// --------------------------------------------------------
+// adding of two number in a array with target
+
+function addTwoNumberWithTarget(arr, target) {
+  let pairs = [];
+  let seen = new Set();
+  for (let num of arr) {
+    let compliment = target - num;
+    if (seen.has(compliment)) {
+      pairs.push(compliment, num);
+    }
+    seen.add(num);
+  }
+  return pairs;
+}
+
+console.log(addTwoNumberWithTarget([1, 2, 3, 4, 5, 6], 10));

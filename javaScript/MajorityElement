@@ -1,0 +1,12 @@
+// --------------------------------------------------
+function findMajority(arr) {
+  const countMap = {};
+
+  for (num of arr) {
+    countMap = (countMap[num] || 0) + 1;
+    if (countMap[num] > arr.length / 2) {
+      return num;
+    }
+  }
+  return null;
+}

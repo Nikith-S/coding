@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------
+function removeVowels(str) {
+  let vowvels = "aeiouAEIOU";
+  let result = "";
+  for (let char of str) {
+    if (vowvels.indexOf(char) == -1) {
+      result += char;
+    }
+  }
+  return result;
+}
+console.log(removeVowels("hello world"));
+
+// ---------------------------------------------------- vovewls count
+
+function vowelsCount(str) {
+  let vowvels = "aeiou";
+  let count = 0;
+  let lower = str.toLowerCase();
+
+  for (let char of lower) {
+    if (vowvels.indexOf(char) != -1) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(vowelsCount("hello world"));
