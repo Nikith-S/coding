@@ -17,10 +17,10 @@
 //       result.push(char);
 //     }
 //   }
-//   return result;
+//   return result.toString();
 // }
 
-// console.log(mostRepeatedElement("aaabbbcccddeee"));
+// console.log(mostRepeatedElement(["hello", "nikith", "hello", "nikith"]));
 
 // # most repeating element in a array
 
@@ -40,7 +40,7 @@
 // }
 // console.log(
 //   //   mostRepeatedElement([1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3])
-//   mostRepeatedElement(["hello", "hello", "name"])
+//   mostRepeatedElement(["hello", "hello", "name", "name"])
 // );
 
 // # most repeating element's in a array
@@ -77,22 +77,30 @@
 //   }
 //   return null;
 // }
-// console.log(nonReapeatingElement("avascript"));
 
 // # find the all non repeating element in a array
-// function allNonReapeatingElement(arr) {
+// function allNonRepeatingElements(arr) {
+//   let array = arr.split(""); // Convert string to array
 //   let frequency = {};
 //   let result = [];
-//   for (let freq of arr) {
-//     frequency[freq] = (frequency[freq] || 0) + 1;
+
+//   // Count occurrences of each character
+//   for (let char of array) {
+//     frequency[char] = (frequency[char] || 0) + 1;
 //   }
-//   for (let char of arr) {
-//     if (frequency[char] == 1) {
+
+//   // Collect non-repeating characters
+//   for (let char of array) {
+//     if (frequency[char] === 1) {
 //       result.push(char);
 //     }
 //   }
-//   return result;
+
+//   return result.length;
 // }
+
+// console.log(allNonRepeatingElements("abcabcbb"));
+// Output: [ 'j', 'v', 's', 'c', 'r', 'p' ]
 
 // ----------------------------------------------------
 // # check if two strings are anagram or not
@@ -141,16 +149,19 @@
 // -----------------------------------------------------------
 // # string is unique or not
 
-function uniqueString(str) {
-  let seen = new Set();
-  for (let x of str) {
-    if (seen.has(x)) {
-      return "it is not unique";
-    } else {
-      seen.add(x);
-    }
-  }
-  return "the string is unique";
-}
+// function uniqueString(str) {
+//   let seen = new Set();
+//   for (let x of str) {
+//     if (seen.has(x)) {
+//       return "it is not unique";
+//     } else {
+//       seen.add(x);
+//     }
+//   }
+//   return "the string is unique";
+// }
 
-console.log(uniqueString("hello"));
+// console.log(uniqueString("hello"));
+
+// ----------------------------------------------------
+
