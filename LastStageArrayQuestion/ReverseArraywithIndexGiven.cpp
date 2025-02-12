@@ -38,3 +38,21 @@ int main()
 
     printArry(arr, n);
 }
+
+// function rotateArrayWithM(arr, m) {
+//     let start = m + 1;
+//     let end = arr.length - 1;
+
+//     while (start <= end) {
+//         [arr[start], arr[end]] = [arr[end], arr[start]]; // Swap elements
+//         start++;
+//         end--;
+//     }
+// }
+
+// // Example usage:
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// let m = 3;
+
+// rotateArrayWithM(arr, m);
+// console.log(arr); // Output: [1, 2, 3, 4, 8, 7, 6, 5]

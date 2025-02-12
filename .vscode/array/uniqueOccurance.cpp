@@ -20,6 +20,26 @@ bool hasUniqueElement(int arr[], int n)
     return false;
 }
 
+
+
+// function hasUniqueElement(arr) {
+//     let ans = 0;
+
+//     // Compute XOR of all elements
+//     for (let num of arr) {
+//         ans ^= num;
+//     }
+
+//     // Check if ans is in the array
+//     for (let num of arr) {
+//         if ((ans ^ num) === 0) {
+//             return true;
+//         }
+//     }
+
+//     return false;
+// }
+
 int main()
 {
     int size;

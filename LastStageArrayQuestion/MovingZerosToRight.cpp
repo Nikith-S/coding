@@ -14,6 +14,19 @@ int movingZerosToRight(int arr[], int n)
     }
 }
 
+// function movingZerosToRight(arr) {
+//     let i = 0;
+
+//     for (let j = 0; j < arr.length; j++) {
+//         if (arr[j] !== 0) {
+//             [arr[i], arr[j]] = [arr[j], arr[i]]; // Swap non-zero element to the front
+//             i++;
+//         }
+//     }
+
+//     return arr;
+// }
+
 int printArry(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
