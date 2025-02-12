@@ -35,6 +35,40 @@ void findUnion(int arr1[], int n, int arr2[], int m)
     }
 }
 
+
+
+function findUnion(arr1, arr2) {
+    let i = 0, j = 0;
+    let unionArray = [];
+
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            unionArray.push(arr1[i]);
+            i++;
+        } else if (arr2[j] < arr1[i]) {
+            unionArray.push(arr2[j]);
+            j++;
+        } else { // If both elements are equal, push only once
+            unionArray.push(arr1[i]);
+            i++;
+            j++;
+        }
+    }
+
+    while (i < arr1.length) {
+        unionArray.push(arr1[i]);
+        i++;
+    }
+
+    while (j < arr2.length) {
+        unionArray.push(arr2[j]);
+        j++;
+    }
+
+    return unionArray;
+}
+
+
 void findArrayIntersection(int arr1[], int n, int arr2[], int m)
 {
 
