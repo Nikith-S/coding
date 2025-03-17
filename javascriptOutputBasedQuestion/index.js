@@ -8,11 +8,13 @@
 // ----------------------------------------------------
 
 // let x = 1;
+// //  // function f() {}   if this there in the code then the ouptput will be function
 // if (function f() {}) {
 //   x = typeof f;
 // }
 
-// console.log(x); undefined
+// console.log(x);
+// undefined;
 
 // ------------------------------------------------------------
 // let a = {
@@ -32,3 +34,11 @@
 // b.name = "nik";
 // console.log(a);
 // console.log(b);   [ { name: 'nikith' }, name: 'nik' ]
+// -----------------------------------------------------------------------
+
+// let a = 10;
+// (function abc() {
+//   console.log(a);
+//   a = 20;
+//   console.log(a);
+// })(); // 10 20
