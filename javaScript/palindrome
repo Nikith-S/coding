@@ -1,10 +1,200 @@
 // ----------------------------- Plaindrome
-function palindrome(str) {
-  let len = str.length;
-  for (let i = 0; i < len / 2; i++) {
-    if (str[i] != str[len - 1 - i]) {
-      return "Not Palindrome";
-    }
-  }
-  return "It's plaindrome";
-}
+// function palindrome(str) {
+//   let len = str.length;
+//   for (let i = 0; i < len / 2; i++) {
+//     if (str[i] != str[len - 1 - i]) {
+//       return "Not Palindrome";
+//     }
+//   }
+//   return "It's plaindrome";
+// }
+
+// function numberPalindrome(num) {
+//   let rev = 0;
+//   let digit = 0;
+//   let temp = num;
+//   while (num !== 0) {
+//     digit = num % 10;
+//     rev = rev * 10 + digit;
+//     num = Math.floor(num / 10);
+//   }
+//   if (temp == rev) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// console.log(numberPalindrome(121));
+
+// ----------------------------------------------
+// function vowels(str) {
+//   let vowels = "aeiou";
+//   let cout = 0;
+//   let result = [];
+
+//   let newStr = str.toLowerCase();
+//   let set = new Set();
+//   for (let x of newStr) {
+//     if (vowels.indexOf(x) !== -1) {
+//       cout++;
+//       result.push(x);
+//     }
+//   }
+//   return { cout, result };
+// }
+
+// console.log(vowels("hello"));
+
+// ----------------------------------------
+// function stringContainsDigitOrNot(str) {
+//   if (str.match(/[0-9]/)) {
+//     // Use `match()` to check for digits
+//     console.log("String contains a digit");
+//   } else {
+//     console.log("No, it does not contain any digits");
+//   }
+// }
+
+// stringContainsDigitOrNot("abc123"); // Output: String contains a digit
+// stringContainsDigitOrNot("abcdef"); // Output: No, it does not contain any digits
+// stringContainsDigitOrNot("123456"); // Output: String contains a digit
+
+// ---------------------------------------------------------------
+// function removeNumbers(str) {
+//   let result = "";
+
+//   for (let x of str) {
+//     if (x.match(/[0-9]/)) {
+//       continue;
+//     }
+//     result += x;
+//   }
+//   return result;
+// }
+
+// console.log(removeNumbers("a123bcd"));
+
+// function removeNumbersAndSymbols(str) {
+//   let result = "";
+
+//   for (let x of str) {
+//     if (x.match(/[a-zA-Z]/)) { // Keep only letters
+//       result += x;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(removeNumbersAndSymbols("a123bcd!@#")); // Output: "abcd"
+// console.log(removeNumbersAndSymbols("hello@#world123")); // Output: "helloworld"
+// console.log(removeNumbersAndSymbols("12345!@#")); // Output: "" (empty string)
+// console.log(removeNumbersAndSymbols("abcDEF-_=+12")); // Output: "abcDEF"
+
+// -----------------------------------------------------------------------
+// function removePunctuation(str) {
+//   return str.replace(/[^a-zA-Z0-9\s]/g, ""); // Remove punctuation, keep letters, numbers & spaces
+// }
+
+// console.log(removePunctuation("Hello, world! How's it going?")); // Output: "Hello world Hows it going"
+// console.log(removePunctuation("C@oding! is fun #100%")); // Output: "Coding is fun 100"
+// console.log(removePunctuation("No punctuation here")); // Output: "No punctuation here"
+// console.log(removePunctuation("What!!?? Are you serious?!")); // Output: "What Are you serious"
+
+// --------------------------------------------------------------------------------
+// to swap each case in string
+
+// let str = "hello WORLD";
+// console.log(
+//   str.replace(/./g, (char) =>
+//     char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()
+//   )
+// );
+
+// a - z = 97 -122
+// A- z = 65 -90
+
+// let str = "HELLO world";
+// let result = "";
+
+// for (let x of str) {
+//   let ascii = x.charCodeAt(0); // Get ASCII value of character
+
+//   result +=
+//     ascii >= 65 && ascii <= 90 // Uppercase letter (A-Z)
+//       ? String.fromCharCode(ascii + 32) // Convert to lowercase
+//       : ascii >= 97 && ascii <= 122 // Lowercase letter (a-z)
+//       ? String.fromCharCode(ascii - 32) // Convert to uppercase
+//       : x; // Keep other characters unchanged
+// }
+
+// console.log(result); // Output: "hello WORLD"
+
+// -----------------------------------------------------------------
+// function countNoWords(str) {
+//   let count = 1; // Start with 1 assuming there's at least one word
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (
+//       str.charAt(i) == " " &&
+//       str.charAt(i + 1) != " " &&
+//       i + 1 < str.length
+//     ) {
+//       count++;
+//     }
+//   }
+//   return str.trim().length === 0 ? 0 : count; // Handle empty or space-only strings
+// }
+
+// console.log(countNoWords("Hello i am good")); // Output: 4
+// console.log(countNoWords("   Hello    world  ")); // Output: 2
+// console.log(countNoWords("")); // Output: 0
+// console.log(countNoWords("   ")); // Output: 0
+// console.log(countNoWords("JavaScript is awesome!")); // Output: 3
+
+// ----------------------------------------------------------------------------
+
+// string compression
+
+// function compression(chars) {
+//   let index = 0; // Tracks the position to write compressed characters
+//   let i = 0; // Pointer to traverse input array
+
+//   while (i < chars.length) {
+//     let cur = chars[i]; // Current character
+//     let count = 0; // Count occurrences of current character
+
+//     while (i < chars.length && chars[i] === cur) {
+//       count++;
+//       i++;
+//     }
+
+//     chars[index] = cur; // Store the character
+//     index++;
+
+//     if (count > 1) {
+//       let countStr = count.toString(); // Convert count to string
+//       for (let j = 0; j < countStr.length; j++) {
+//         chars[index] = countStr[j]; // Store each digit of count
+//         index++;
+//       }
+//     }
+//   }
+
+//   return index; // Returns the new length after compression
+// }
+
+// // Example usage:
+// let arr = ["a", "a", "b", "b", "c", "c", "c"];
+// console.log(compression(arr)); // Output: 6
+// console.log(arr.slice(0, 6)); // Output: ['a', '2', 'b', '2', 'c', '3']
+// Example usage:
+// let arr = ["a", "a", "b", "b", "c", "c", "c"];
+// let newLength = compression(arr);
+
+// console.log(newLength); // Output: 6
+// console.log(arr.slice(0, newLength).join("")); // Output: 'a2b2c3'
+
+
+
+

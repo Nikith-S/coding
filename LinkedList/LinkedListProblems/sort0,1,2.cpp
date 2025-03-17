@@ -15,16 +15,13 @@ Node *sort2Approach(Node *head)
     Node *twoTail = twoHead;
     Node *cur = head;
 
-    // Mistake: Incorrect condition in the while loop.
-    while (cur != **head**) // should be `NULL`
+    while (cur != NULL)
     {
-
         int value = cur->data;
         if (value == 0)
         {
-            **inseetAtTail**(zeroTail, cur); // Typo: `inseetAtTail` should be `insertAtTail`
+            insertAtTail(zeroTail, cur);
         }
-
         else if (value == 1)
         {
             insertAtTail(oneTail, cur);
@@ -36,8 +33,7 @@ Node *sort2Approach(Node *head)
         cur = cur->next;
     }
 
-    // merge those 3 link lists
-
+    // Merge three sorted linked lists
     if (oneHead->next != NULL)
     {
         zeroTail->next = oneHead->next;
@@ -46,13 +42,17 @@ Node *sort2Approach(Node *head)
     {
         zeroTail->next = twoHead->next;
     }
+
     oneTail->next = twoHead->next;
     twoTail->next = NULL;
 
+    // Update head to new sorted list
     head = zeroHead->next;
-    delete (zeroHead);
-    delete (oneHead);
-    delete (twoHead);
 
-    return head; // Missing return statement for the function
+    // Delete dummy nodes
+    delete zeroHead;
+    delete oneHead;
+    delete twoHead;
+
+    return head;
 }
