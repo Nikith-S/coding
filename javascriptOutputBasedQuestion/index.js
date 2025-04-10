@@ -8,7 +8,7 @@
 // ----------------------------------------------------
 
 // let x = 1;
-// //  // function f() {}   if this there in the code then the ouptput will be function
+// //  // function f() {}  if that fuunction is there ouside or above the code then it will return an output as function
 // if (function f() {}) {
 //   x = typeof f;
 // }
@@ -278,3 +278,75 @@
 // document.getElementById("inner").addEventListener("click", () => {
 //   console.log("Inner");
 // }, false); // bubbling
+
+// ------------------------------------------------------------
+// ---------> function scope 🔹 1. Function Scope
+// Variables declared inside a function are accessible only within that function.
+// Uses var.
+
+// function greet() {
+//   var message = "Hello";
+//   console.log(message); // ✅ Works
+// }
+// console.log(message); // ❌ Error: message is not defined
+
+// --------------------------------------------------------------------
+// ---------> blocked scope
+// 🔹 2. Block Scope
+// Variables declared inside a block ({}) using let or const are only available inside that block.
+
+// if (true) {
+//   let a = 10;
+//   const b = 20;
+//   var c = 30;
+// }
+// console.log(c); // ✅ Works (because `var` is not block-scoped)
+// console.log(a); // ❌ Error
+// console.log(b); // ❌ Error
+
+// -----------------------------------------------------------
+// ----------> lexial scope
+
+// 🔹 3. Lexical Scope
+// Lexical scope means a function remembers the scope in which it was defined — not where it's called.
+// Also known as static scope.
+
+// function outer() {
+//   let outerVar = "I’m outside!";
+
+//   function inner() {
+//     console.log(outerVar); // ✅ inner() can access outerVar
+//   }
+
+//   inner();
+// }
+// outer();
+// -------------------------------------------------------------------------------------------------------
+// let a = {
+//   age: 21,
+// };
+// let b = a;
+// b.age = 22;
+// console.log(a);
+// ---------------------------------------------------------------------------
+
+// let a = {
+//   name: "nikith",
+//   age: 22,
+//   city: {
+//     birthplace: "bengaluru",
+//     pinCode: 5660021,
+//   },
+// };
+
+// let b = a;
+// b.city.pinCode = 5660022;
+// console.log(a.city.pinCode); // output : mysore  it will change the original object as well
+
+// ---------------------------------------------------------------------
+
+// const arr = Array(2).fill({ value: 0 });
+// arr[0].value = 2;
+// for (i of arr) {
+//   console.log(i);
+// }   { value: 2 }   { value: 2 }
