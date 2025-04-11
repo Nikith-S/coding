@@ -350,3 +350,51 @@
 // for (i of arr) {
 //   console.log(i);
 // }   { value: 2 }   { value: 2 }
+
+// ----------------------------------------------------------------------
+
+// const obj = {
+//   test: "value2",
+// };
+// const obj2 = obj;
+// obj2.test = "value3";
+
+// console.log(obj);
+// console.log(obj2);
+// { test: 'value3' }
+// { test: 'value3' }
+
+// ----------------------------------------------------------------------------
+
+// const obj = {
+//   test: {
+//     test1: "4",
+//   },
+// };
+
+// const obj2 = { ...obj };
+// obj2.test.test1 = "5";
+// console.log(obj);
+// console.log(obj2);
+// { test: { test1: '5' } }
+// { test: { test1: '5' } }
+
+// -----------------------------------------------------------------------------------
+
+// let obj = {
+//   a: 10,
+//   greet: function () {
+//     console.log(this.a); //10
+//     return this.a; //10
+//   },
+// };
+
+// console.log(obj.greet()); //10
+// console.log(obj.greet); [Function: greet]
+
+// ---------------------------------------------------------------------------
+
+// let z = 1;
+// let y = z;
+// console.log(typeof y); // number
+// ----------------------------------------------------------------------------
