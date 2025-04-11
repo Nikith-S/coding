@@ -398,3 +398,30 @@
 // let y = z;
 // console.log(typeof y); // number
 // ----------------------------------------------------------------------------
+
+// var employee = {
+//   company: "amzon",
+// };
+
+// var employee1 = Object.create(employee); inherit prototype of employee
+// delete employee1.company; it does affect the prototype chain
+// console.log(employee1.company); // ama zon
+// delete employee.company;
+// console.log(employee1.company); //undefined
+
+// --------------------------------------------------------------
+// var employee = {
+//   company: "amzon",
+// };
+
+// var employee = employee1
+// delete employee1.company; it does affect the
+// console.log(employee1.company); // undefined
+// delete employee.company;
+// console.log(employee1.company); //undefined
+// --------------------------------------------------------------------
+// var z = 1, y = z = typeof y;
+// console.log(y);
+// Answer: "undefined". The typeof y evaluates before y is declared, resulting in "undefined".
+
+// -------------------------------------------------------------------------------------
