@@ -1,6 +1,7 @@
 // function sum(a, b = 2, c = 5) {
 //   return b + c;
 // }
+// // console.log(sum()); //Nan
 
 // let evenNumber1 = [4, 6];
 // let evenNumber2 = [2, ...evenNumber1, 8];
@@ -52,8 +53,8 @@
 // "use strict";
 
 // function number(a = 3, b = 5) {
-//   var a = 20;
-//   var b = 20;
+//   // var a = 20;
+//   // var b = 20;
 //   console.log(a);
 //   console.log(b);
 
@@ -78,7 +79,7 @@
 //   ...testTwo,
 // };
 
-// console.log(testMatches.score[0] + testMatches.score[1]);
+// console.log(testMatches.score[0] + testMatches.score[1]); //615
 
 // function sum(a, b) {
 //   return a + b;
@@ -124,9 +125,9 @@
 //   var i = 10;
 // }, 10000);
 
-var i = 10;
-function name() {
-  console.log("let me in");
-  console.loh(i);
-}
-name();
+// var i = 10;
+// function name() {
+//   console.log("let me in");
+//   console.loh(i);
+// }
+// name();

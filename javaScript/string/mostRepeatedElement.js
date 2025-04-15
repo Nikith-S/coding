@@ -1,26 +1,28 @@
 // -----------------------------------------------------
 // # most repeating element in a string
 
-// function mostRepeatedElement(str) {
-//   let frequency = {};
-//   let maxCount = 0;
-//   let result = [];
+function mostRepeatedElement(str) {
+  let frequency = {};
+  let maxCount = 0;
+  let result = [];
 
-//   for (let char of str) {
-//     if (char != "") {
-//       frequency[char] = (frequency[char] || 0) + 1;
-//     }
-//     if (frequency[char] > maxCount) {
-//       maxCount = frequency[char];
-//       result = [char];
-//     } else if (frequency[char] == maxCount) {
-//       result.push(char);
-//     }
-//   }
-//   return result.toString();
-// }
+  for (let char of str) {
+    if (char != "") {
+      frequency[char] = (frequency[char] || 0) + 1;
+    }
+    if (frequency[char] > maxCount) {
+      maxCount = frequency[char];
+      result = [char];
+    } else if (frequency[char] == maxCount) {
+      result.push(char);
+    }
+  }
+  return result.toString();
+}
 
-// console.log(mostRepeatedElement(["hello", "nikith", "hello", "nikith"]));
+// console.log(mostRepeatedElement(["hello", "nikith", "hello", "nikith"]));  
+console.log(mostRepeatedElement(["hello", "nikith", "hello", "nikith"]));  
+
 
 // # most repeating element in a array
 

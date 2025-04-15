@@ -425,3 +425,86 @@
 // Answer: "undefined". The typeof y evaluates before y is declared, resulting in "undefined".
 
 // -------------------------------------------------------------------------------------
+
+// let arr = [1, 2, 3, 4];
+
+// // let obj = ({ ...arr }); one way
+// // another way using reducer
+// let obj = arr.reduce((acc, it, i) => ({ ...acc, [i]: it }), {});
+
+// console.log(obj);
+// newArr = [];
+// Object.values(obj).map((key) => {
+//   newArr.push(key);
+// });
+// console.log(newArr); // [ 1, 2, 3, 4 ]
+
+// -----------------------------------------------------------------------------------
+
+// let promise = new Promise((resolve, reject) => {
+//   let a = 10;
+//   let b = 20;
+//   if (a + b > 30) {
+//     resolve("success");
+//   } else {
+//     reject("failed");
+//   }
+// });
+
+// promise.then((data) => {
+//   console.log(data, "it is coming as a promisse id resolved ");
+// });
+// promise.catch((data) => {
+//   console.log(data, "it is coming as a promisse id rejected ");
+// });
+// promise.finally(() => {
+//   console.log("finally block is executed ");
+// });
+
+// ----------------------------------------------------------------
+
+// let status = "Pending";
+
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // You can toggle this:
+//     resolve("Data received");
+//     // reject("Something went wrong");
+//   }, 2000);
+// });
+
+// console.log("Initial status:", status); // "Pending"
+
+// promise
+//   .then((res) => {
+//     status = "Resolved";
+//     console.log("Resolved:", res);
+//   })
+//   .catch((err) => {
+//     status = "Rejected";
+//     console.log("Rejected:", err);
+//   })
+//   .finally(() => {
+//     console.log("Final status:", status);
+//   });
+
+// // Check after 1 second to show it's still pending
+// setTimeout(() => {
+//   console.log("Status after 1 second:", status);
+// }, 1000);
+
+// -----------------------------------------------------------------------
+
+let sentence = "hi hi";
+let words = sentence.split(" ");
+// console.log(words[0]);
+let maxlength = -Infinity;
+let maxWord = "";
+for (let i = 0; i < words.length; i++) {
+  if (words[i].length > maxlength) {
+    maxlength = words[i].length;
+    maxWord = words[i];
+  }
+}
+console.log(maxWord); // hello
+console.log(maxlength);
